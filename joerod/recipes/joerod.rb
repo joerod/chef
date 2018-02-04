@@ -7,6 +7,3 @@ windows_task 'Reboot' do
   start_time '03:00'
   day 1
 end
-
-shell_out("powershell.exe -NoLogo -NonInteractive -NoProfile -command Get-date").stdout
-shell_out("powershell.exe -NoLogo -NonInteractive -NoProfile -command $PSVersionTable").stdout

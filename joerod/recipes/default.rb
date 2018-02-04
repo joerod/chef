@@ -8,8 +8,9 @@
 #
 
 #include_recipe 'chef_client_updater'
-include_recipe 'joerod::software'
-include_recipe 'joerod::joerod'
+['joerod::chef-client','joerod::joerod','joerod::software'].each do |recipe|
+    include_recipe recipe
+end
 
 #install the latest version of chef client
 #chef_client_updater 'Install latest'

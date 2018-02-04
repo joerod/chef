@@ -1,7 +1,3 @@
-if not ::File.exist?('C:\\ProgramData\\chocolatey\\choco.exe')
-    include_recipe 'chocolatey'
-end 
-
 #install laters apps via chocolatey
 %w{PowerShell 
 rsat
@@ -17,6 +13,7 @@ visualstudiocode
 notepadplusplus.install
 sublimetext2
 git.install
+chef-client
 chefdk
 docker
 qbittorrent
@@ -27,5 +24,5 @@ winscp
 itunes
 dropbox
 imgburn}.each do |pack|
-  chocolatey pack
+  chocolatey_package pack
 end
