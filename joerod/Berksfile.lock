@@ -1,0 +1,16 @@
+DEPENDENCIES
+  joerod
+    path: .
+    metadata: true
+
+GRAPH
+  chef_client_updater (3.2.3)
+  chocolatey (1.2.1)
+    windows (>= 1.38)
+  joerod (0.2.0)
+    chef_client_updater (>= 0.0.0)
+    chocolatey (>= 0.0.0)
+    windows (>= 0.0.0)
+  ohai (5.2.1)
+  windows (3.4.4)
+    ohai (>= 4.0.0)
