@@ -1,15 +1,18 @@
 #install laters apps via chocolatey
-%w{PowerShell 
-rsat
-python
-python2
-7zip 
+%w{PowerShell
+powershell-core
+visualstudiocode 
 spotify
 vlc
 GoogleChrome
+dropbox
+plexmediaserver
+itunes
+python
+python2
+7zip 
 firefox
 terraform
-visualstudiocode
 notepadplusplus.install
 sublimetext2
 git.install
@@ -17,12 +20,13 @@ chef-client
 chefdk
 docker
 qbittorrent
-plexmediaserver
 slack
 putty
 winscp
-itunes
-dropbox
-imgburn}.each do |pack|
-  chocolatey_package pack
+imgburn
+rsat}.each do |pack|
+  chocolatey_package pack do
+    timeout node['joerod']['windows']['choco_timeout'].to_i
+    action :upgrade
+  end
 end
