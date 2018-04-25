@@ -8,7 +8,10 @@
 #
 
 #include_recipe 'chef_client_updater'
-['joerod::chef-client','joerod::joerod','joerod::software'].each do |recipe|
+['joerod::chef-client',
+    'joerod::firewall',
+    'joerod::joerod', 
+    'joerod::software'].each do |recipe|
     include_recipe recipe
 end
 
